@@ -15,7 +15,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="min-h-screen h-full">
+    <main>
       <Map data={data} />
     </main>
   );
