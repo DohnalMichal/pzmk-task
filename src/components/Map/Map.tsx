@@ -13,7 +13,7 @@ const Map = ({ data }: MapProps) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   useInitializeMap(mapContainer, data);
 
-  return <div ref={mapContainer} className="min-h-screen" />;
+  return <div ref={mapContainer} className="min-h-screen h-full" />;
 };
 
 export { Map };
