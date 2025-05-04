@@ -48,20 +48,23 @@ This project is a solution to the **PZMK trial assignment**, which involved buil
 
 ---
 
+## 🧪 Run Locally
+
+```
+yarn install
+yarn dev
+```
+
+Then visit http://localhost:3000.
+
 ## 🗺️ Map Tiles
 
-By default, the map uses **MapTiler vector tiles** via:
+This project uses OpenStreetMap raster tiles, which are free, publicly accessible, and require no API key.
 
-```ts
-style: "https://api.maptiler.com/maps/streets-v2/style.json?key=YOUR_KEY";
-```
-
-(I like the Streets style a lot so I decided to go with MapTiler style rather than OpenStreetMap)
-
-🔑 To run locally, create `.env.local`:
+The tiles are loaded directly from:
 
 ```
-NEXT_PUBLIC_MAPTILER_KEY=your_maptiler_api_key
+https://tile.openstreetmap.org/{z}/{x}/{y}.png
 ```
 
-If desired, you can switch to OpenStreetMap raster tiles (no key required).
+They are integrated using a minimal MapLibre-compatible style object:
