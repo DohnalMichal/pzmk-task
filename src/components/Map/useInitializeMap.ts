@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import { addGeoJsonLayers } from "./addGeoJsonLayers";
 import { handleClick } from "./popupHandlers";
-import type { NormalizedData } from "@/types/map";
 import { setCursorOnHover } from "./setCursorOnHover";
+import type { NormalizedData } from "@/types/map";
 
 const BRNO = { lat: 49.19487, lng: 16.607 };
 
@@ -52,14 +52,6 @@ const useInitializeMap = (
     });
 
     map.on("click", (e) => handleClick(map, e));
-    map.on("zoomend", () => {
-      const show = map.getZoom() >= 13;
-      map.setLayoutProperty(
-        "points-layer",
-        "visibility",
-        show ? "visible" : "none"
-      );
-    });
 
     return () => {
       mapRef.current?.remove();

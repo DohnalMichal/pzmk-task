@@ -43,8 +43,10 @@ const addGeoJsonLayers = (map: maplibregl.Map, data: NormalizedData): void => {
       "circle-stroke-width": 1,
       "circle-stroke-color": "#fff",
     },
+    minzoom: POINTS_ZOOM_THRESHOLD,
+    maxzoom: 22,
     layout: {
-      visibility: map.getZoom() >= POINTS_ZOOM_THRESHOLD ? "visible" : "none",
+      visibility: "visible",
     },
   });
 };
